@@ -38,16 +38,16 @@ uvicorn main:app --reload
 
 ## TODO
 
-* [ ] AUth
+* [ ] Auth
 
-  * [ ] signup
-  * [ ] signin
+  * [X] signup
+  * [X] signin
   * [ ] signout
-* [ ] profile
+* [X] profile
 
-  * [ ] view profile
-  * [ ] update profile
-* [ ] Create Team
+  * [X] view profile
+  * [X] update profile
+* [X] Create Team
 
   * [ ] send Invitation Mail
 * [ ] Evaluation
