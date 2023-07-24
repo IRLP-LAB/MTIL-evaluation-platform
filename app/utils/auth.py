@@ -30,5 +30,20 @@ def authenticate_user(username: str, password: str):
 def send_invitation_email(email: str, link: str, User: str, sender_name: str, team_name: str):
     return "Send invitation email to: " + email
 
-
-
+def is_account_verified(username: str):
+    try:
+        cursor = db_conn.cursor(dictionary=True)
+        # query = "SELECT * FROM users WHERE username = %s"
+        query = "SELECT mail_verified from users where username = %s"
+        cursor.execute(query, (username,))
+        result = cursor.fetchone()
+        print("result ", result)
+        cursor.close()
+        if result["mail_verified"] == 1:
+            print("True")
+            return True
+        else:
+            print("False")
+            return False
+    except connector.Error as err:
+        raise HTTPException(status_code=500, detail="Database error") from err

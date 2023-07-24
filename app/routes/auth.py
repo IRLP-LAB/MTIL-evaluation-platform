@@ -15,3 +15,7 @@ def signup(user: SignupUser):
 def signin(user: User):
     return auth_service.signin(user)
 
+@router.get("/mailaccountverify")
+def mailaccountverify(email:str):
+    return auth_service.mailaccountverify(email)
+
